@@ -10,19 +10,22 @@
 <meta property="og:image" content="https://uyreel.kg/reel.jpg">
 <meta property="og:url" content="https://uyreel.kg/">
 <link rel="canonical" href="https://uyreel.kg/">
+<meta property="og:type" content="website">
 <meta name="theme-color" content="#0A1222">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1222'/%3E%3Cpath d='M25 19v26l21-13z' fill='%23F2B544'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0A1222; --bg2:#0F1B33; --line:#22335A; --ink:#F3F6FC; --mute:#A9B6D3; --dim:#7786A8;
+  --bg:#0A1222; --bg2:#0F1B33; --line:#22335A; --ink:#F3F6FC; --mute:#A9B6D3; --dim:#8E9CBD;
   --gold:#F2B544; --gold-ink:#1B1403; --sky:#6FB6FF; --ok:#49D29A;
   --r:18px; --wrap:1080px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;overflow-wrap:break-word;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:Onest,"Golos Text",system-ui,sans-serif;margin:0;text-wrap:balance;letter-spacing:-.02em}
 p{margin:0}
 a{color:inherit}
@@ -30,7 +33,7 @@ a{color:inherit}
 .top{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
 .logo{font:800 22px/1 Onest,sans-serif;letter-spacing:-.03em;text-decoration:none}
 .logo b{color:var(--gold)}
-.lang{background:none;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:7px 13px;font:600 13px/1 "Golos Text",sans-serif;cursor:pointer}
+.lang{min-height:36px;min-width:44px;background:none;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:7px 13px;font:600 13px/1 "Golos Text",sans-serif;cursor:pointer}
 .lang:hover{color:var(--ink);border-color:var(--dim)}
 
 /* hero */
@@ -43,7 +46,7 @@ h1 span{color:var(--gold)}
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--gold-ink);text-decoration:none;
   font:700 19px/1 Onest,sans-serif;padding:19px 26px;border-radius:14px;margin-top:24px;box-shadow:0 10px 30px rgba(242,181,68,.28);transition:transform .15s ease,box-shadow .15s ease}
 .cta:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(242,181,68,.36)}
-.cta:focus-visible,.lang:focus-visible,.snd:focus-visible,summary:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.cta:focus-visible,.lang:focus-visible,.snd:focus-visible,.logo:focus-visible,.pick:focus-visible,summary:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
 .cta svg{width:22px;height:22px;flex:none}
 .under{color:var(--dim);font-size:14.5px;margin-top:12px}
 .facts{display:flex;flex-wrap:wrap;gap:8px 10px;margin:0;padding:0;list-style:none;justify-content:center}
@@ -61,17 +64,16 @@ h1 span{color:var(--gold)}
 section{padding:48px 0;border-top:1px solid var(--line)}
 h2{font-size:clamp(26px,5vw,38px);line-height:1.1;font-weight:800}
 .lead{color:var(--mute);margin-top:10px;max-width:40em}
-.steps{display:grid;gap:14px;margin-top:26px;counter-reset:s;padding:0;list-style:none}
-.steps li{counter-increment:s;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 20px 74px;position:relative}
-.steps li::before{content:counter(s);position:absolute;left:20px;top:18px;width:38px;height:38px;border-radius:12px;background:var(--gold);color:var(--gold-ink);
-  font:800 20px/38px Onest,sans-serif;text-align:center}
-.steps h3{font-size:19px;font-weight:700}
-.steps p{color:var(--mute);font-size:15.5px;margin-top:4px}
+.steps{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}
+.step{display:grid;grid-template-columns:38px minmax(0,1fr);gap:0 16px;align-items:start;align-content:start;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.step-n{width:38px;height:38px;border-radius:12px;background:var(--gold);color:var(--gold-ink);font:800 20px/38px Onest,sans-serif;text-align:center}
+.step h3{font-size:19px;font-weight:700}
+.step p{color:var(--mute);font-size:15.5px;margin-top:4px}
 .msg{display:block;margin-top:10px;background:#0B1830;border:1px dashed var(--line);border-radius:10px;padding:9px 12px;color:var(--sky);font:500 14px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}
 
 .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
 .shots figure{margin:0}
-.shots img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;border:1px solid var(--line);display:block;background:var(--bg2)}
+.shots img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:16px;border:1px solid var(--line);display:block;background:var(--bg2)}
 .shots figcaption{margin-top:9px;font-size:15px;color:var(--mute)}
 .shots b{display:block;color:var(--ink);font:700 16px/1.25 Onest,sans-serif}
 
@@ -79,6 +81,23 @@ h2{font-size:clamp(26px,5vw,38px);line-height:1.1;font-weight:800}
 .kind{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .kind h3{font-size:19px;font-weight:700}
 .kind p{color:var(--mute);font-size:15.5px;margin-top:6px}
+
+.plans{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}
+.plan{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px 20px}
+.plan h3{font-size:19px;font-weight:700}
+.price{margin-top:10px;font:800 34px/1.1 Onest,"Golos Text",sans-serif;letter-spacing:-.02em;color:var(--gold);white-space:nowrap}
+.price small{font:500 15px/1.2 "Golos Text",sans-serif;letter-spacing:0;color:var(--mute);white-space:normal}
+.plan ul{margin:14px 0 20px;padding:0;list-style:none;color:var(--mute);font-size:15.5px}
+.plan li{position:relative;padding-left:22px;margin-top:6px}
+.plan li::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.plan li b{color:var(--ink);font-weight:600}
+.pick{margin-top:auto;display:flex;align-items:center;justify-content:center;text-align:center;min-height:50px;padding:13px 16px;border-radius:14px;border:1px solid var(--gold);
+  color:var(--gold);text-decoration:none;font:700 16.5px/1.2 Onest,sans-serif;transition:background .15s ease,color .15s ease}
+.pick:hover{background:var(--gold);color:var(--gold-ink)}
+.terms{display:grid;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.terms li{border:1px dashed var(--line);border-radius:14px;padding:13px 16px;color:var(--mute);font-size:15.5px}
+.terms b{color:var(--ink);font-weight:600}
+.terms code{color:var(--sky);font:500 .95em/1 ui-monospace,SFMono-Regular,Menlo,monospace}
 
 details{border-bottom:1px solid var(--line);padding:16px 0}
 summary{cursor:pointer;font:700 18px/1.3 Onest,sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
@@ -94,7 +113,8 @@ footer{color:var(--dim);font-size:13.5px;padding:0 0 110px;text-align:center}
 
 .bar{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,18,34,.92);
   border-top:1px solid var(--line);backdrop-filter:blur(10px);transform:translateY(110%);transition:transform .25s ease;z-index:5}
-.bar.on{transform:none}
+.bar{visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+.bar.on{transform:none;visibility:visible;transition:transform .25s ease}
 .bar .cta{margin:0;width:100%;padding:16px 18px;font-size:17px}
 
 @media (min-width:860px){
@@ -102,27 +122,28 @@ footer{color:var(--dim);font-size:13.5px;padding:0 0 110px;text-align:center}
   .copy{grid-area:copy;align-self:end}.phone{grid-area:phone}.facts{grid-area:facts;align-self:start;justify-content:flex-start}
   .phone{width:min(34vw,350px)}
   .steps{grid-template-columns:repeat(3,1fr)}
-  .steps li{padding:74px 22px 22px}
+  .step{grid-template-columns:minmax(0,1fr);gap:16px 0;padding:22px}
+  .plans,.terms{grid-template-columns:repeat(3,1fr)}
   .shots{grid-template-columns:repeat(4,1fr)}
   .kinds{grid-template-columns:repeat(3,1fr)}
   .bar{display:none}
   .final,footer{padding-bottom:64px}
   section{padding:68px 0}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta,.bar{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta,.bar,.pick{transition:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="logo" href="#" aria-label="UyReel">Uy<b>Reel</b></a>
-    <button class="lang" id="lang" type="button" aria-label="Switch language">EN</button>
+    <a class="logo" href="./" aria-label="UyReel — на главную" data-en-aria-label="UyReel — home">Uy<b>Reel</b></a>
+    <button class="lang" id="lang" type="button" lang="en" aria-label="EN — switch to English" hidden>EN</button>
   </header>
 
   <main>
   <div class="hero">
     <div class="copy">
-      <div class="eyebrow"><i></i><span data-en="Telegram bot for agents and owners">Telegram-бот для риелторов и собственников</span></div>
+      <div class="eyebrow"><i aria-hidden="true"></i><span data-en="Telegram bot for agents and owners">Telegram-бот для риелторов и собственников</span></div>
       <h1 data-en="Paste a listing link. <span>Get a ready Reel.</span>">Вставьте ссылку на объявление. <span>Получите готовый Reels.</span></h1>
       <p class="sub" data-en="The bot makes the vertical video itself: a fly-over of the property on satellite imagery, the price, the area, schools and parks nearby. No editing, no camera crew.">Бот сам собирает вертикальное видео: облёт объекта со спутника, цена, площадь, школы и парки рядом. Без монтажа и без оператора.</p>
       <a class="cta" href="https://t.me/ReelEstatekgbot" target="_blank" rel="noopener">
@@ -133,9 +154,9 @@ footer{color:var(--dim);font-size:13.5px;padding:0 0 110px;text-align:center}
 
     </div>
     <div class="phone">
-      <video id="reel" src="reel.mp4" poster="reel.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Пример ролика UyReel: участок 6 соток в Бишкеке"></video>
+      <video id="reel" src="reel.mp4" poster="reel.jpg" width="720" height="1280" autoplay muted loop playsinline preload="metadata" aria-label="Пример ролика UyReel: участок 6 соток в Бишкеке" data-en-aria-label="Sample UyReel video: a 6-sotka land plot in Bishkek"></video>
       <span class="tag" data-en="Real reel made by the bot">Настоящий ролик из бота</span>
-      <button class="snd" id="snd" type="button" data-en="🔊 Sound">🔊 Звук</button>
+      <button class="snd" id="snd" type="button" aria-pressed="false">🔊 Звук</button>
     </div>
     <ul class="facts">
       <li><b data-en="A couple of minutes">Пара минут</b> <span data-en="from link to video">от ссылки до видео</span></li>
@@ -146,10 +167,10 @@ footer{color:var(--dim);font-size:13.5px;padding:0 0 110px;text-align:center}
 
   <section id="how">
     <h2 data-en="Three steps, no skills needed">Три шага. Уметь ничего не нужно</h2>
-    <ol class="steps">
-      <li><h3 data-en="Open the bot">Откройте бот</h3><p data-en="Tap the button — Telegram opens. Press Start.">Нажмите кнопку — откроется Telegram. Нажмите «Старт».</p></li>
-      <li><h3 data-en="Send the listing">Пришлите объявление</h3><p data-en="A house.kg link, or just the text of your ad and the location.">Ссылку с house.kg — или просто текст объявления и точку на карте.</p><span class="msg">https://house.kg/details/…</span></li>
-      <li><h3 data-en="Get the video">Заберите видео</h3><p data-en="In a couple of minutes the bot sends the reel and a ready caption. Post it.">Через пару минут бот пришлёт ролик и готовую подпись. Публикуйте.</p></li>
+    <ol class="steps" role="list">
+      <li class="step"><span class="step-n" aria-hidden="true">1</span><div><h3 data-en="Open the bot">Откройте бот</h3><p data-en="Tap the button — Telegram opens. Press Start.">Нажмите кнопку — откроется Telegram. Нажмите «Старт».</p></div></li>
+      <li class="step"><span class="step-n" aria-hidden="true">2</span><div><h3 data-en="Send the listing">Пришлите объявление</h3><p data-en="A house.kg link, or just the text of your ad and a pin on the map.">Ссылку с house.kg — или просто текст объявления и точку на карте.</p><span class="msg" translate="no">https://house.kg/details/…</span></div></li>
+      <li class="step"><span class="step-n" aria-hidden="true">3</span><div><h3 data-en="Get the video">Заберите видео</h3><p data-en="In a couple of minutes the bot sends the reel and a ready caption. Post it.">Через пару минут бот пришлёт ролик и готовую подпись. Публикуйте.</p></div></li>
     </ol>
   </section>
 
@@ -157,10 +178,10 @@ footer{color:var(--dim);font-size:13.5px;padding:0 0 110px;text-align:center}
     <h2 data-en="What the buyer sees in 30 seconds">Что покупатель видит за 30 секунд</h2>
     <p class="lead" data-en="Frames from the reel above. Everything is taken from your listing and the map — you type nothing.">Кадры из ролика выше. Всё берётся из вашего объявления и с карты — вручную ничего вводить не нужно.</p>
     <div class="shots">
-      <figure><img src="shot1.jpg" alt="Кадр: заголовок, район и цена поверх спутникового снимка" loading="lazy"><figcaption><b data-en="Price and place">Цена и место</b><span data-en="Title, district and price from the first second.">Заголовок, район и цена — с первой секунды.</span></figcaption></figure>
-      <figure><img src="shot2.jpg" alt="Кадр: участок обведён на спутниковом снимке, площадь крупно" loading="lazy"><figcaption><b data-en="The property itself">Сам объект</b><span data-en="The plot outlined on the map, its area and sides.">Участок обведён на карте, площадь и стороны.</span></figcaption></figure>
-      <figure><img src="shot3.jpg" alt="Кадр: расстояние до школы в метрах и минутах пешком" loading="lazy"><figcaption><b data-en="What is nearby">Что рядом</b><span data-en="School, park, main road — in metres and minutes.">Школа, парк, главная дорога — в метрах и минутах.</span></figcaption></figure>
-      <figure><img src="shot4.jpg" alt="Кадр: карточка с документами, коммуникациями и ценой" loading="lazy"><figcaption><b data-en="Details and contact">Детали и контакт</b><span data-en="Documents, utilities, price — and a QR code.">Документы, коммуникации, цена — и QR-код.</span></figcaption></figure>
+      <figure><img src="shot1.jpg" alt="Кадр: заголовок, район и цена поверх спутникового снимка" data-en-alt="Frame: title, district and price over a satellite image" width="540" height="960" loading="lazy" decoding="async"><figcaption><b data-en="Price and place">Цена и место</b><span data-en="Title, district and price from the first second.">Заголовок, район и цена — с первой секунды.</span></figcaption></figure>
+      <figure><img src="shot2.jpg" alt="Кадр: участок обведён на спутниковом снимке, площадь крупно" data-en-alt="Frame: the plot outlined on a satellite image, with its area in large type" width="540" height="960" loading="lazy" decoding="async"><figcaption><b data-en="The property itself">Сам объект</b><span data-en="The plot outlined on the map, its area and sides.">Участок обведён на карте, площадь и стороны.</span></figcaption></figure>
+      <figure><img src="shot3.jpg" alt="Кадр: расстояние до школы в метрах и минутах пешком" data-en-alt="Frame: distance to a school in metres and minutes on foot" width="540" height="960" loading="lazy" decoding="async"><figcaption><b data-en="What is nearby">Что рядом</b><span data-en="School, park, main road — in metres and minutes.">Школа, парк, главная дорога — в метрах и минутах.</span></figcaption></figure>
+      <figure><img src="shot4.jpg" alt="Кадр: карточка с документами, коммуникациями и ценой" data-en-alt="Frame: a card with documents, utilities and price" width="540" height="960" loading="lazy" decoding="async"><figcaption><b data-en="Details and contact">Детали и контакт</b><span data-en="Documents, utilities, price — and a QR code.">Документы, коммуникации, цена — и QR-код.</span></figcaption></figure>
     </div>
   </section>
 
@@ -171,6 +192,36 @@ footer{color:var(--dim);font-size:13.5px;padding:0 0 110px;text-align:center}
       <div class="kind"><h3 data-en="House">Дом</h3><p data-en="Fly-over of the house, photos from the listing, rooms and area, the neighbourhood.">Облёт дома, фото из объявления, комнаты и площадь, окружение.</p></div>
       <div class="kind"><h3 data-en="Flat">Квартира</h3><p data-en="The building on the map, your floor marked, the developer's picture of the complex, photos of the rooms.">Дом на карте, ваш этаж, изображение ЖК от застройщика, фото комнат.</p></div>
     </div>
+  </section>
+
+  <section id="pricing">
+    <h2 data-en="Pricing">Тарифы</h2>
+    <p class="lead" data-en="The first reel is free. After that, pick a monthly plan.">Первый ролик — бесплатно. Дальше — тариф на месяц.</p>
+    <ul class="plans" role="list">
+      <li class="plan">
+        <h3 data-en="Start">Старт</h3>
+        <p class="price"><span data-en="1,990 som">1&nbsp;990 сом</span> <small data-en="per month">в месяц</small></p>
+        <ul role="list"><li data-en="<b>10 reels</b> a month"><b>10 роликов</b> в месяц</li></ul>
+        <a class="pick" href="https://t.me/ReelEstatekgbot" target="_blank" rel="noopener" data-en="Choose Start">Выбрать «Старт»</a>
+      </li>
+      <li class="plan">
+        <h3 data-en="Agent">Агент</h3>
+        <p class="price"><span data-en="4,900 som">4&nbsp;900 сом</span> <small data-en="per month">в месяц</small></p>
+        <ul role="list"><li data-en="<b>30 reels</b> a month"><b>30 роликов</b> в месяц</li></ul>
+        <a class="pick" href="https://t.me/ReelEstatekgbot" target="_blank" rel="noopener" data-en="Choose Agent">Выбрать «Агент»</a>
+      </li>
+      <li class="plan">
+        <h3 data-en="Agency">Агентство</h3>
+        <p class="price"><span data-en="12,900 som">12&nbsp;900 сом</span> <small data-en="per month">в месяц</small></p>
+        <ul role="list"><li data-en="<b>100 reels</b> a month"><b>100 роликов</b> в месяц</li><li data-en="<b>Up to 5</b> agents"><b>До 5</b> агентов</li></ul>
+        <a class="pick" href="https://t.me/ReelEstatekgbot" target="_blank" rel="noopener" data-en="Choose Agency">Выбрать «Агентство»</a>
+      </li>
+    </ul>
+    <ul class="terms" role="list">
+      <li data-en="Pay for <b>6 months</b> — <b>15% off</b>">Оплата за <b>6 месяцев</b> — <b>скидка 15&nbsp;%</b></li>
+      <li data-en="Pay for <b>12 months</b> — <b>25% off</b>">Оплата за <b>12 месяцев</b> — <b>скидка 25&nbsp;%</b></li>
+      <li data-en="You choose a plan inside the bot — send <code translate=&quot;no&quot;>/plans</code>">Тариф выбирается в боте — команда <code translate="no">/plans</code></li>
+    </ul>
   </section>
 
   <section id="faq">
@@ -197,24 +248,51 @@ footer{color:var(--dim);font-size:13.5px;padding:0 0 110px;text-align:center}
 <div class="bar" id="bar"><a class="cta" href="https://t.me/ReelEstatekgbot" target="_blank" rel="noopener"><span data-en="Make a reel for free">Сделать ролик бесплатно</span></a></div>
 
 <script>
+/* Language switch. Kept in its own block so nothing else on the page can break it. */
 (function(){
-  var v=document.getElementById('reel'),s=document.getElementById('snd'),b=document.getElementById('bar'),l=document.getElementById('lang');
-  var nodes=[].slice.call(document.querySelectorAll('[data-en]'));
+  var d=document,root=d.documentElement,btn=d.getElementById('lang'),KEY='uyreel-lang';
+  var meta=d.querySelector('meta[name="description"]');
+  var head={ru:{t:d.title,d:meta?meta.getAttribute('content'):''},
+    en:{t:'UyReel — a Reel for your property listing in a couple of minutes',
+        d:'Send the Telegram bot a link or the text of a listing and it makes a vertical video by itself: a satellite fly-over, the price, the area and what is nearby. The first reel is free.'}};
+  var nodes=[].slice.call(d.querySelectorAll('[data-en]'));
   nodes.forEach(function(n){n.setAttribute('data-ru',n.innerHTML)});
-  var lang='ru';
-  try{lang=(new URLSearchParams(location.search).get('lang'))||localStorage.getItem('uyreel-lang')||'ru'}catch(e){}
-  function label(){s.textContent=(v.muted?'🔊 ':'🔇 ')+(lang==='en'?(v.muted?'Sound':'Mute'):(v.muted?'Звук':'Без звука'))}
-  function set(x){lang=x==='en'?'en':'ru';document.documentElement.lang=lang;
-    nodes.forEach(function(n){if(n!==s)n.innerHTML=n.getAttribute(lang==='en'?'data-en':'data-ru')});
-    l.textContent=lang==='en'?'RU':'EN';label();try{localStorage.setItem('uyreel-lang',lang)}catch(e){}}
-  l.addEventListener('click',function(){set(lang==='en'?'ru':'en')});
-  s.addEventListener('click',function(){v.muted=!v.muted;if(v.paused)v.play();label()});
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.controls=true}
-  var hero=document.querySelector('.hero .cta'),fin=document.querySelector('.final .cta');
-  if('IntersectionObserver' in window){var seen={h:true,f:false};
+  var attrs=['alt','aria-label'],attrNodes=[];
+  attrs.forEach(function(a){[].slice.call(d.querySelectorAll('[data-en-'+a+']')).forEach(function(n){
+    n.setAttribute('data-ru-'+a,n.getAttribute(a)||'');attrNodes.push([n,a])})});
+  function read(){var x=null;
+    try{x=new URLSearchParams(location.search).get('lang')}catch(e){}
+    if(x!=='en'&&x!=='ru'){x=null;try{x=localStorage.getItem(KEY)}catch(e){}}
+    return x==='en'?'en':'ru'}
+  function set(x,save){var lang=x==='en'?'en':'ru';
+    root.lang=lang;
+    nodes.forEach(function(n){var v=n.getAttribute('data-'+lang);if(v!==null)n.innerHTML=v});
+    attrNodes.forEach(function(p){var v=p[0].getAttribute('data-'+lang+'-'+p[1]);if(v!==null)p[0].setAttribute(p[1],v)});
+    d.title=head[lang].t;if(meta)meta.setAttribute('content',head[lang].d);
+    if(btn){var en=lang==='en';btn.textContent=en?'RU':'EN';btn.lang=en?'ru':'en';
+      btn.setAttribute('aria-label',en?'RU — переключить на русский':'EN — switch to English')}
+    if(save){try{localStorage.setItem(KEY,lang)}catch(e){}}
+    try{d.dispatchEvent(new Event('uyreel:lang'))}catch(e){}}
+  if(btn){btn.hidden=false;btn.addEventListener('click',function(){set(root.lang==='en'?'ru':'en',true)})}
+  set(read(),false);
+})();
+</script>
+<script>
+/* Sample video sound button and the sticky call-to-action bar. */
+(function(){
+  var d=document,v=d.getElementById('reel'),s=d.getElementById('snd'),b=d.getElementById('bar');
+  if(v&&s){
+    var label=function(){var en=d.documentElement.lang==='en';
+      s.textContent=(v.muted?'🔊 ':'🔇 ')+(en?(v.muted?'Sound on':'Sound off'):(v.muted?'Включить звук':'Выключить звук'));
+      s.setAttribute('aria-pressed',v.muted?'false':'true')};
+    s.addEventListener('click',function(){v.muted=!v.muted;if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}label()});
+    d.addEventListener('uyreel:lang',label);label();
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.controls=true}
+  }
+  var hero=d.querySelector('.hero .cta'),fin=d.querySelector('.final .cta');
+  if(b&&hero&&fin&&'IntersectionObserver' in window){var seen={h:true,f:false};
     var io=new IntersectionObserver(function(es){es.forEach(function(e){seen[e.target===hero?'h':'f']=e.isIntersecting});b.classList.toggle('on',!seen.h&&!seen.f)});
     io.observe(hero);io.observe(fin)}
-  set(lang);
 })();
 </script>
 </body>
